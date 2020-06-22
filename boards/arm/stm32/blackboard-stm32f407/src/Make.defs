@@ -1,0 +1,11 @@
+
+
+-include $(TOPDIR)/Make.defs
+
+ASRCS =
+CSRCS = stm32_boot.c stm32_bringup.c stm32_appinit.c
+
+DEPPATH += --dep-path board
+VPATH += :board
+CFLAGS += $(shell $(INCDIR) "$(CC)" $(TOPDIR)$(DELIM)arch$(DELIM)$(CONFIG_ARCH)$(DELIM)src$(DELIM)board$(DELIM)board)
+
